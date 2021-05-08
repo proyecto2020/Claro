@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <div class="site-wrapper">
+        <form [formGroup]="ofertasForm">
+            <div class="row">
+                <div class="col-sm-6 mt-4">
+                    <label for="oferta"><strong>Oferta</strong></label>
+                    <select class="form-select" formControlName="oferta" name="oferta"
+                        aria-label="Default select example" (change)="filtrarOferta($event)">
+                        <option value="" disabled>Seleccione</option>
+                        <option value={{item.id}} *ngFor="let item of listaOfertas">{{item.name}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 mt-4">
+                    <label for="Idoferta"><strong>ID Oferta</strong></label>
+                    <input type="email" class="form-control" formControlName="IdOferta" name="IdOferta" id="IdOferta"
+                        placeholder="ID Oferta">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 mt-4"></div>
+                <div class="col-sm-6 mt-4">
+                    <label for="oferta"><strong>Nombre</strong></label>
+                    <input type="email" class="form-control" formControlName="nombre" name="nombre" id="nombre"
+                        placeholder="Nombre">
+                </div>
+            </div>
+        </form>
+    </div>
+    <app-characteristics [idOffer]="offerSelected"></app-characteristics>
+</div>

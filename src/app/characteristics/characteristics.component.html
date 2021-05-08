@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <div class="row mt-4">
+        <div class="col-sm-6">
+            <div class="table-responsive">
+                <table class="table table-bordered border-primary table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Caracteristicas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of this.listaCaracteristicasFiltrada | paginate: { itemsPerPage: 5, currentPage: p };">
+                            <td>{{item.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="this.listaCaracteristicasFiltrada.length > 0">
+                    <pagination-controls previousLabel="Anterior" nextLabel="
+                       Siguiente" responsive="true" (pageChange)="p = $event"></pagination-controls>
+                 </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <app-prices [idOffer]="this.idOffer"></app-prices>
+        </div>
+    </div>
+</div>

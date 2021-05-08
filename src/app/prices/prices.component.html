@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-bordered border-primary table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre Precio</th>
+                    <th scope="col">Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of this.lstPreciosFiltrada">
+                    <td>{{item.name}}</td>
+                    <td>{{item.price.amount | currency }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
